@@ -1,133 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+:root {
+    --primary-pink: #ff4d6d;
+    --bg-color: #fff0f3;
 }
 
 body {
-    background: #fff5f7;
-    color: #444;
+    background: var(--bg-color);
+    margin: 0;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 section {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
 }
 
-.typewriter {
-    font-size: 2.5rem;
-    color: #ff4d6d;
+/* টাইপিং অ্যানিমেশন */
+.typing {
+    width: 0;
     overflow: hidden;
-    border-right: .15em solid orange;
     white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    border-right: 3px solid var(--primary-pink);
+    font-size: 3rem;
+    animation: typing 3s steps(30) forwards, blink 0.8s infinite;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    width: 80%;
-    margin-top: 20px;
-}
-
-.photo-card {
-    background: white;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.photo-card:hover {
-    transform: scale(1.05) rotate(2deg);
-}
-
-.photo-card img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-button {
-    margin-top: 30px;
-    padding: 12px 25px;
-    background: #ff4d6d;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #c9184a;
-}
-
-/* Animations */
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: orange; } }
-
-/* Floating Hearts */
-.heart {
-    position: fixed;
-    color: #ff4d6d;
-    font-size: 20px;
-    animation: float 4s linear forwards;
-    z-index: 1000;
-}
-
-@keyframes float {
-    to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-}
-
-/* আগের CSS এর সাথে এগুলো যোগ করুন বা রিপ্লেস করুন */
-
-.hidden {
+/* স্ক্রল রিভিল অ্যানিমেশন */
+.reveal {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-out;
 }
 
-.show {
+.reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ছবির কার্ডগুলোর জন্য স্পেশাল এনিমেশন */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s all ease-in-out;
+}
+
+.reveal.active .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* গ্যালারি কার্ড এনিমেটেড */
 .photo-card {
-    background: white;
+    width: 250px;
+    background: #fff;
     padding: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     border-radius: 15px;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin: 10px;
+    transition: 0.4s;
 }
 
 .photo-card:hover {
-    transform: scale(1.1) rotate(-3deg);
-    z-index: 10;
+    transform: scale(1.1) rotate(3deg);
 }
 
-/* টেক্সট এনিমেশন: হার্টবিট */
-h2 {
-    animation: pulse 2s infinite;
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent } }
+
+/* ফ্লোটিং হার্ট */
+.heart {
+    position: fixed;
+    font-size: 1.5rem;
+    animation: float 5s linear infinite;
+    z-index: 99;
+    top: 100vh;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* ব্যাকগ্রাউন্ডে ছোট ছোট বিন্দুর এনিমেশন */
-body {
-    background: radial-gradient(circle, #fff5f7 0%, #ffeef2 100%);
+@keyframes float {
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
 }
