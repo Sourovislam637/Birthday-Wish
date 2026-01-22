@@ -3,37 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Birthday Surprise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <section id="welcome">
-            <h1 class="typewriter">Happy Birthday, My Special One! 🎂</h1>
-            <p>Today is all about celebrating you and the joy you bring to my life.</p>
-            <button onclick="scrollToMemories()">Start the Celebration ✨</button>
-        </section>
-
-        <section id="memories">
-            <h2>Our Beautiful Memories</h2>
-            <div class="gallery">
-                <div class="photo-card"><img src="https://via.placeholder.com/300" alt="Memory 1"><p>You make me smile!</p></div>
-                <div class="photo-card"><img src="https://via.placeholder.com/300" alt="Memory 2"><p>My favorite person.</p></div>
-                <div class="photo-card"><img src="https://via.placeholder.com/300" alt="Memory 3"><p>Every moment matters.</p></div>
-            </div>
-            <button onclick="scrollToMessage()">Read My Message 💌</button>
-        </section>
-
-        <section id="message">
-            <div class="letter">
-                <h3>A Special Message For You</h3>
-                <p>এখানে আপনার মনের কথাগুলো লিখুন... আপনি আমার জীবনের সবচেয়ে প্রিয় মানুষ। আজকের দিনটি আপনার জন্য খুব সুন্দর হোক!</p>
-                <span>With Love, [Your Name] ❤️</span>
-            </div>
-        </section>
-    </div>
-
     <div id="heart-container"></div>
+
+    <section class="reveal">
+        <h1 class="typing">Happy Birthday, Baby! ❤️</h1>
+        <p class="fade-up">You're the best thing that ever happened to me.</p>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <section class="reveal">
+        <h2>Our Beautiful Memories</h2>
+        <div class="gallery">
+            <div class="photo-card fade-up"><img src="photo1.jpg" alt="1"></div>
+            <div class="photo-card fade-up"><img src="photo2.jpg" alt="2"></div>
+            <div class="photo-card fade-up"><img src="photo3.jpg" alt="3"></div>
+            <div class="photo-card fade-up"><img src="photo4.jpg" alt="4"></div>
+        </div>
+    </section>
+
+    <section class="reveal">
+        <div class="letter-box fade-up">
+            <h3>Special Note 📩</h3>
+            <p>এখানে আপনার বড় মেসেজটি লিখুন। এটি স্ক্রল করলে নিচ থেকে ভেসে উঠবে।</p>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
