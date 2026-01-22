@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section id="welcome">
+            <h1 class="typewriter">Happy Birthday, My Special One! 🎂</h1>
+            <p>Today is all about celebrating you and the joy you bring to my life.</p>
+            <button onclick="scrollToMemories()">Start the Celebration ✨</button>
+        </section>
+
+        <section id="memories">
+            <h2>Our Beautiful Memories</h2>
+            <div class="gallery">
+                <div class="photo-card"><img src="https://via.placeholder.com/300" alt="Memory 1"><p>You make me smile!</p></div>
+                <div class="photo-card"><img src="https://via.placeholder.com/300" alt="Memory 2"><p>My favorite person.</p></div>
+                <div class="photo-card"><img src="https://via.placeholder.com/300" alt="Memory 3"><p>Every moment matters.</p></div>
+            </div>
+            <button onclick="scrollToMessage()">Read My Message 💌</button>
+        </section>
+
+        <section id="message">
+            <div class="letter">
+                <h3>A Special Message For You</h3>
+                <p>এখানে আপনার মনের কথাগুলো লিখুন... আপনি আমার জীবনের সবচেয়ে প্রিয় মানুষ। আজকের দিনটি আপনার জন্য খুব সুন্দর হোক!</p>
+                <span>With Love, [Your Name] ❤️</span>
+            </div>
+        </section>
+    </div>
+
+    <div id="heart-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
