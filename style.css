@@ -1,33 +1,46 @@
 :root {
     --primary-pink: #ff4d6d;
+    --soft-pink: #ffb3c1;
     --bg-color: #fff0f3;
 }
 
-body {
-    background: var(--bg-color);
+* {
     margin: 0;
-    overflow-x: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    overflow-x: hidden;
+}
+
+/* সেকশন সেটিংস */
 section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    position: relative;
     text-align: center;
-    padding: 40px;
 }
 
-/* টাইপিং অ্যানিমেশন */
-.typing {
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid var(--primary-pink);
-    font-size: 3rem;
-    animation: typing 3s steps(30) forwards, blink 0.8s infinite;
+/* টাইপিং টেক্সট */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-pink);
+    margin-bottom: 10px;
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 3s;
 }
 
 /* স্ক্রল রিভিল অ্যানিমেশন */
@@ -42,45 +55,58 @@ section {
     transform: translateY(0);
 }
 
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.8s all ease-in-out;
+/* গ্যালারি কার্ড */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 90%;
+    margin-top: 40px;
 }
 
-.reveal.active .fade-up {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.5s;
-}
-
-/* গ্যালারি কার্ড এনিমেটেড */
-.photo-card {
-    width: 250px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    margin: 10px;
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: 0.4s;
 }
 
-.photo-card:hover {
-    transform: scale(1.1) rotate(3deg);
+.card:hover {
+    transform: scale(1.05) rotate(-2deg);
 }
 
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink { 50% { border-color: transparent } }
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    height: 350px;
+    object-fit: cover;
+}
 
-/* ফ্লোটিং হার্ট */
+/* মেসেজ বক্স */
+.letter-box {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    max-width: 600px;
+    box-shadow: 0 10px 40px rgba(255, 77, 109, 0.2);
+    border: 2px dashed var(--primary-pink);
+}
+
+/* হার্ট অ্যানিমেশন */
 .heart {
     position: fixed;
-    font-size: 1.5rem;
-    animation: float 5s linear infinite;
-    z-index: 99;
-    top: 100vh;
+    top: -10%;
+    font-size: 20px;
+    color: var(--primary-pink);
+    animation: fall linear forwards;
+    z-index: 100;
 }
 
-@keyframes float {
-    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
