@@ -1,8 +1,8 @@
 let w = (c.width = window.innerWidth),
   h = (c.height = window.innerHeight),
   ctx = c.getContext("2d"),
-  hw = w / 2;
-(hh = h / 2),
+  hw = w / 2, // এখানে সেমিকোলন বদলে কমা দিন
+  hh = h / 2; // এখানে hh ডিক্লেয়ার করুন
   (opts = {
     // change the text in here //
     strings: ["HAPPY", "BIRTHDAY!", "to You"],
@@ -399,4 +399,5 @@ window.addEventListener("resize", function () {
 
   ctx.font = opts.charSize + "px Verdana";
 });
+
 
