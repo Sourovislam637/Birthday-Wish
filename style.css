@@ -88,3 +88,46 @@ button:hover {
 @keyframes float {
     to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
+
+/* আগের CSS এর সাথে এগুলো যোগ করুন বা রিপ্লেস করুন */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ছবির কার্ডগুলোর জন্য স্পেশাল এনিমেশন */
+.photo-card {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.photo-card:hover {
+    transform: scale(1.1) rotate(-3deg);
+    z-index: 10;
+}
+
+/* টেক্সট এনিমেশন: হার্টবিট */
+h2 {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ব্যাকগ্রাউন্ডে ছোট ছোট বিন্দুর এনিমেশন */
+body {
+    background: radial-gradient(circle, #fff5f7 0%, #ffeef2 100%);
+}
